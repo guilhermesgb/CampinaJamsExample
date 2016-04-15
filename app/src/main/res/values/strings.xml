@@ -2,5 +2,6 @@
 
     <string name="app_name">App Exemplo - Campina Jams</string>
     <string name="greeting">Olá, mundo!</string>
+    <string name="no_saved_items">Você não possui nenhum item salvo no momento.</string>
 
 </resources>
