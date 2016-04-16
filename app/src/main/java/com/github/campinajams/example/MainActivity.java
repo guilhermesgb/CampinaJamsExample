@@ -40,19 +40,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        String savedName = Settings.getSavedNameFromSharedPreferences(getApplicationContext());
+        updateGreeting(savedName);
+    }
+
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_OPEN_SETTINGS) {
             if (resultCode == RESULT_OK) {
                 String newName = data.getStringExtra(NameDialog.KEY_NEW_NAME);
-                String newGreeting;
-                if (newName == null || newName.trim().isEmpty()) {
-                    newGreeting = getString(R.string.hello_world);
-                } else {
-                    newGreeting = String.format(getString(R.string.hello_person), newName);
-                }
-                greetingLabel.setText(newGreeting);
+                Settings.saveNewNameIntoSharedPreferences(getApplicationContext(), newName);
             }
         }
+    }
+
+    private void updateGreeting(String name) {
+        String newGreeting;
+        if (name == null || name.trim().isEmpty()) {
+            newGreeting = getString(R.string.hello_world);
+        } else {
+            newGreeting = String.format(getString(R.string.hello_person), name);
+        }
+        greetingLabel.setText(newGreeting);
     }
 
 }

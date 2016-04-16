@@ -18,8 +18,12 @@ public class NameDialog extends AppCompatActivity {
         setContentView(R.layout.dialog_name);
 
         final EditText nameInputField = (EditText) findViewById(R.id.name_input_field);
-        final Button nameSaveButton = (Button) findViewById(R.id.name_save_button);
+        String savedName = Settings.getSavedNameFromSharedPreferences(getApplicationContext());
+        if (!(savedName == null || savedName.trim().isEmpty())) {
+            nameInputField.setText(savedName);
+        }
 
+        final Button nameSaveButton = (Button) findViewById(R.id.name_save_button);
         nameSaveButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
