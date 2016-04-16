@@ -11,9 +11,10 @@
     tools:context="com.github.campinajams.example.MainActivity">
 
     <TextView
+        android:id="@+id/greeting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/greeting"
+        android:text="@string/hello_world"
         android:textSize="26sp"
         android:textStyle="italic"
         android:gravity="center"

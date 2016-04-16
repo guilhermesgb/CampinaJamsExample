@@ -1,7 +1,15 @@
 <resources>
 
     <string name="app_name">App Exemplo - Campina Jams</string>
-    <string name="greeting">Olá, mundo!</string>
+
+    <string name="hello_world">Olá, mundo!</string>
+    <string name="hello_person">Olá, %s!</string>
+
     <string name="no_saved_items">Você não possui nenhum item salvo no momento.</string>
+
+    <string name="action_settings">Configurações</string>
+    <string name="name_question">Qual o seu nome?</string>
+    <string name="digite_seu_nome">Digite aqui…</string>
+    <string name="action_save">Pronto!</string>
 
 </resources>
